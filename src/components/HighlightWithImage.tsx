@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import Img, { FluidObject } from 'gatsby-image';
+import { getImage, GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 import { Container } from '../styles/shared';
@@ -36,20 +36,18 @@ const HighlightHeader = styled.h2`
 `;
 
 type Props = {
-   image: FluidObject;
    title: string;
    children?: React.ReactNode;
    alternate?: boolean;
+   image: IGatsbyImageData | undefined;
 };
 
-export default function HighlightWithImage({ image, title, children, alternate }: Props) {
+export default function HighlightWithImage({ title, image, children, alternate }: Props) {
    return (
       <Root>
          <Centered style={{ flexDirection: alternate ? 'row-reverse' : undefined }}>
             <MockupContainer>
-               <BrowserMockup>
-                  <Img fluid={image} />
-               </BrowserMockup>
+               <BrowserMockup>{image && <GatsbyImage image={image} alt={title} />}</BrowserMockup>
             </MockupContainer>
             <TextContainer
                style={alternate ? { display: 'flex', flexDirection: 'column', alignItems: 'flex-end' } : undefined}

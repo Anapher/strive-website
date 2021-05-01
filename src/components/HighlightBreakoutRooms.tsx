@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import styled from 'styled-components';
 import { List, ListItem } from '../styles/list';
 import HighlightWithImage from './HighlightWithImage';
 
@@ -13,16 +13,14 @@ export default function HighlightBreakoutRooms({ alternate }: Props) {
       query {
          fileName: file(relativePath: { eq: "highlights/screen_share.png" }) {
             childImageSharp {
-               fluid(maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
-               }
+               gatsbyImageData(layout: CONSTRAINED, width: 800)
             }
          }
       }
    `);
 
    return (
-      <HighlightWithImage image={data.fileName.childImageSharp.fluid} title="Breakout Rooms" alternate={alternate}>
+      <HighlightWithImage title="Breakout Rooms" image={getImage(data.fileName)} alternate={alternate}>
          <List>
             <ListItem>Not separated from conference, more like the Discord room system</ListItem>
             <ListItem>Moderators can send announcements to all participants any time</ListItem>

@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 import { List, ListItem } from '../styles/list';
@@ -13,20 +14,14 @@ export default function HighlightPermissions({ alternate }: Props) {
       query {
          fileName: file(relativePath: { eq: "highlights/screen_share.png" }) {
             childImageSharp {
-               fluid(maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
-               }
+               gatsbyImageData(width: 800)
             }
          }
       }
    `);
 
    return (
-      <HighlightWithImage
-         image={data.fileName.childImageSharp.fluid}
-         title="Flexible Permission System"
-         alternate={alternate}
-      >
+      <HighlightWithImage title="Flexible Permission System" image={getImage(data.fileName)} alternate={alternate}>
          <div>
             <p>
                We are using a layered permission system, meaning that every participant has based on his status and

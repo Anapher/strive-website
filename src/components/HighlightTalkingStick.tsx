@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 import { List, ListItem } from '../styles/list';
@@ -17,16 +18,14 @@ export default function HighlightTalkingStick({ alternate }: Props) {
       query {
          fileName: file(relativePath: { eq: "highlights/screen_share.png" }) {
             childImageSharp {
-               fluid(maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
-               }
+               gatsbyImageData(width: 800)
             }
          }
       }
    `);
 
    return (
-      <HighlightWithImage image={data.fileName.childImageSharp.fluid} title="Talking Stick" alternate={alternate}>
+      <HighlightWithImage title="Talking Stick" image={getImage(data.fileName)} alternate={alternate}>
          <div>
             <p>
                The talking stick mode is simple: If you have the stick, you are the presenter and may use your
