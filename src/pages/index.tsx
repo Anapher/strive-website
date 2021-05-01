@@ -4,6 +4,10 @@ import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Header from '../components/Header';
 import SectionHeader from '../components/SectionHeader';
 import FeatureList from '../components/FeatureList';
+import HighlightScreenShare from '../components/HighlightScreenShare';
+import HighlightBreakoutRooms from '../components/HighlightBreakoutRooms';
+import HighlightPermissions from '../components/HighlightPermissions';
+import HighlightTalkingStick from '../components/HighlightTalkingStick';
 
 const GlobalStyles = createGlobalStyle`
     body {
@@ -14,10 +18,7 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const Root = styled.div`
-   padding-top: 32px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+   padding-bottom: 64px;
 `;
 
 const theme = {
@@ -30,13 +31,18 @@ const theme = {
 export default function index() {
    return (
       <ThemeProvider theme={theme}>
-         <>
+         <Root>
             <GlobalStyles />
             <SEO />
             <Header />
             <SectionHeader title="Exactly what you need for a video conference!" />
             <FeatureList />
-         </>
+            <SectionHeader title="Highlights" />
+            <HighlightScreenShare />
+            <HighlightBreakoutRooms />
+            <HighlightPermissions />
+            <HighlightTalkingStick />
+         </Root>
       </ThemeProvider>
    );
 }

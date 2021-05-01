@@ -8,9 +8,10 @@ const LogoHeader = styled.h1`
    font-family: 'Roboto Condensed';
    font-weight: bold;
    line-height: 60px;
+   font-size: 40pt;
 
    @media (min-width: 768px) {
-      font-size: 55px !important;
+      font-size: 55pt !important;
       margin: 80px auto 10px;
    }
 

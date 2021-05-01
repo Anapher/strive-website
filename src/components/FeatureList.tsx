@@ -1,6 +1,7 @@
 import React from 'react';
 import { AnimateKeyframesProps } from 'react-simple-animate/dist/types';
 import styled from 'styled-components';
+import { Container } from '../styles/shared';
 
 const props: AnimateKeyframesProps = {
    keyframes: [
@@ -14,6 +15,8 @@ const props: AnimateKeyframesProps = {
 };
 
 const FeaturesContainer = styled.div`
+   ${Container}
+
    display: flex;
    flex-direction: column;
 
