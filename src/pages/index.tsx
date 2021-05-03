@@ -19,6 +19,8 @@ const GlobalStyles = createGlobalStyle`
 
 const Root = styled.div`
    padding-bottom: 64px;
+   width: 100%;
+   overflow-x: hidden;
 `;
 
 const theme = {

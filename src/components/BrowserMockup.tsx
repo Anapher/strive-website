@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Frame = styled.div`
-   border-top: 2em solid rgba(104, 104, 104, 0.7);
+   border-top: 1.5em solid rgba(104, 104, 104, 0.7);
    box-shadow: 0 0.1em 1em 0 rgba(0, 0, 0, 0.4);
    position: relative;
    border-radius: 3px 3px 0 0;
@@ -11,10 +11,10 @@ const Frame = styled.div`
       display: block;
       position: absolute;
       content: '';
-      top: -1.25em;
+      top: -0.95em; // (1.5-0.4)/2 + 0.4
       left: 1em;
-      width: 0.5em;
-      height: 0.5em;
+      width: 0.4em;
+      height: 0.4em;
       border-radius: 50%;
       background-color: #f44;
       box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;

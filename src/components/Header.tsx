@@ -37,6 +37,7 @@ const Slogan = styled.h4`
 
 const Container = styled.header`
    padding-top: 70px;
+   width: 100%;
 `;
 
 const ButtonGroup = styled.div`

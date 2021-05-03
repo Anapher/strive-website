@@ -1,23 +1,28 @@
-import { graphql, useStaticQuery } from 'gatsby';
-import { getImage, GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 import { Container } from '../styles/shared';
 import BrowserMockup from './BrowserMockup';
 
-const Centered = styled.div`
-   display: flex;
-   flex-direction: row;
-   max-width: 1500px;
-   width: 100%;
-`;
-
 const Root = styled.div`
    ${Container}
+
+   padding-left: 0px;
+   padding-right: 0px;
 
    display: flex;
    justify-content: center;
    margin-bottom: 64px;
+`;
+
+const Centered = styled.div`
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+
+   @media (max-width: 768px) {
+      flex-direction: column;
+   }
 `;
 
 const MockupContainer = styled.div`
@@ -28,6 +33,9 @@ const TextContainer = styled.div`
    flex: 1;
    padding-left: 32px;
    padding-right: 32px;
+   @media (max-width: 768px) {
+      padding-top: 16px;
+   }
 `;
 
 const HighlightHeader = styled.h2`
@@ -47,7 +55,11 @@ export default function HighlightWithImage({ title, image, children, alternate }
       <Root>
          <Centered style={{ flexDirection: alternate ? 'row-reverse' : undefined }}>
             <MockupContainer>
-               <BrowserMockup>{image && <GatsbyImage image={image} alt={title} />}</BrowserMockup>
+               <BrowserMockup>
+                  {image && (
+                     <GatsbyImage style={{ borderRadius: '0 0 3px 3px', marginBottom: -4 }} image={image} alt={title} />
+                  )}
+               </BrowserMockup>
             </MockupContainer>
             <TextContainer
                style={alternate ? { display: 'flex', flexDirection: 'column', alignItems: 'flex-end' } : undefined}
