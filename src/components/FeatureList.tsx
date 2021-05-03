@@ -18,13 +18,9 @@ const FeaturesContainer = styled.div`
    ${Container}
 
    display: flex;
-   flex-direction: column;
-
-   @media (min-width: 768px) {
-      flex-direction: row;
-      justify-content: center;
-      flex-wrap: wrap;
-   }
+   flex-direction: row;
+   justify-content: center;
+   flex-wrap: wrap;
 `;
 
 const FeatureContainer = styled.article`
@@ -37,6 +33,10 @@ const FeatureContainer = styled.article`
 const FeatureTitle = styled.h3`
    text-align: center;
    line-height: 1.5px;
+
+   @media (max-width: 992px) {
+      font-size: 11pt;
+   }
 `;
 
 const FeatureDescription = styled.p`
@@ -44,11 +44,21 @@ const FeatureDescription = styled.p`
    font-size: 11pt;
    width: 160px;
    margin: 12px 0px 0px 0px;
+
+   @media (max-width: 992px) {
+      font-size: 10pt;
+      width: 120px;
+   }
 `;
 
 const Icon = styled.svg`
    width: 56px;
    height: 56px;
+
+   @media (max-width: 992px) {
+      width: 36px;
+      height: 36px;
+   }
 `;
 
 export default function FeatureList() {
