@@ -14,6 +14,7 @@ module.exports = {
          resolve: 'gatsby-plugin-manifest',
          options: {
             icon: 'src/images/icon.png',
+            theme_color: '#2980b9',
          },
       },
       'gatsby-plugin-sharp',
