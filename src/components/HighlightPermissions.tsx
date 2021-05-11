@@ -22,22 +22,18 @@ export default function HighlightPermissions({ alternate }: Props) {
 
    return (
       <HighlightWithImage title="Flexible Permission System" image={getImage(data.fileName)} alternate={alternate}>
-         <div>
-            <p>
-               We are using a layered permission system, meaning that every participant has based on his status and
-               current room permission layers available. These layers contain the permissions to use the microphone, to
-               change the current scene, to create breakout rooms and so on.
-            </p>
-            <p>
-               The permissions can be changed in conference settings. That way, it's possible to create the conference
-               setting exactly for your needs!
-            </p>
-            <p>
-               For example, you can deny all participants to use their microphone and share their screen. If they become
-               the current presenter, they automatically receive the permissions until that status is revoked
-            </p>
-            <p>It's possible to set different permissions for the main conference room and breakout rooms.</p>
-         </div>
+         <List>
+            <ListItem>Flexible permissions based on current room and many other factors</ListItem>
+            <ListItem>Highly configurable</ListItem>
+            <ListItem>
+               Example 1: Everyone has the permissions to use the microphone and activate the webcam. The chat is
+               disabled. This is a nice setting for small talk
+            </ListItem>
+            <ListItem>
+               Example 2: Only moderators may use the microphone and share their screen. They can select a presenter who
+               automatically receives these permissions until that status is revoked.
+            </ListItem>
+         </List>
       </HighlightWithImage>
    );
 }

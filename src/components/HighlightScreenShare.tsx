@@ -22,8 +22,8 @@ export default function HighlightScreenShare({ alternate }: Props) {
    return (
       <HighlightWithImage title="Screen Share" image={getImage(data.fileName)} alternate={alternate}>
          <List>
-            <ListItem>Use all space to maximize the screen</ListItem>
-            <ListItem>Very fast thanks to Mediasoup</ListItem>
+            <ListItem>Full HD</ListItem>
+            <ListItem>We follow the paradigm: Do not waste space!</ListItem>
          </List>
       </HighlightWithImage>
    );

@@ -24,10 +24,10 @@ export default function HighlightBreakoutRooms({ alternate }: Props) {
          <List>
             <ListItem>Not separated from conference, more like the Discord room system</ListItem>
             <ListItem>Moderators can send announcements to all participants any time</ListItem>
-            <ListItem>A timer is always visible to all participants</ListItem>
-            <ListItem>The breakout room options can be changed on the fly</ListItem>
+            <ListItem>A timer is always visible to everyone</ListItem>
+            <ListItem>Options can be changed on the fly</ListItem>
             <ListItem>No audio reconnecting when switching rooms</ListItem>
-            <ListItem>Global chat available</ListItem>
+            <ListItem>Global chat, room chat and private chat available</ListItem>
          </List>
       </HighlightWithImage>
    );

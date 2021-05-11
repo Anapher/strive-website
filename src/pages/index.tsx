@@ -8,6 +8,7 @@ import HighlightScreenShare from '../components/HighlightScreenShare';
 import HighlightBreakoutRooms from '../components/HighlightBreakoutRooms';
 import HighlightPermissions from '../components/HighlightPermissions';
 import HighlightTalkingStick from '../components/HighlightTalkingStick';
+import HighlightEquipment from '../components/HighlightEquipment';
 
 const GlobalStyles = createGlobalStyle`
     body {
@@ -41,9 +42,10 @@ export default function index() {
             <FeatureList />
             <SectionHeader title="Highlights" />
             <HighlightScreenShare />
+            <HighlightEquipment />
             <HighlightBreakoutRooms />
-            <HighlightPermissions />
             <HighlightTalkingStick />
+            <HighlightPermissions />
          </Root>
       </ThemeProvider>
    );
