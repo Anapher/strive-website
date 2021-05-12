@@ -1,7 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import styled from 'styled-components';
 import { List, ListItem } from '../styles/list';
 import HighlightWithImage from './HighlightWithImage';
 
