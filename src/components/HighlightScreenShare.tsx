@@ -13,7 +13,7 @@ export default function HighlightScreenShare({ alternate }: Props) {
       query {
          fileName: file(relativePath: { eq: "highlights/screen_share.png" }) {
             childImageSharp {
-               gatsbyImageData(width: 800)
+               gatsbyImageData(width: 1200)
             }
          }
       }
@@ -21,10 +21,7 @@ export default function HighlightScreenShare({ alternate }: Props) {
 
    return (
       <HighlightWithImage title="Screen Share" image={getImage(data.fileName)} alternate={alternate}>
-         <List>
-            <ListItem>Full HD</ListItem>
-            <ListItem>We follow the paradigm: Do not waste space!</ListItem>
-         </List>
+         Maximum space for your screen!
       </HighlightWithImage>
    );
 }

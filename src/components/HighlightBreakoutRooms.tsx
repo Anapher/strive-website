@@ -11,9 +11,9 @@ type Props = {
 export default function HighlightBreakoutRooms({ alternate }: Props) {
    const data = useStaticQuery(graphql`
       query {
-         fileName: file(relativePath: { eq: "highlights/screen_share.png" }) {
+         fileName: file(relativePath: { eq: "highlights/breakout_rooms.png" }) {
             childImageSharp {
-               gatsbyImageData(layout: CONSTRAINED, width: 800)
+               gatsbyImageData(layout: CONSTRAINED, width: 1200)
             }
          }
       }

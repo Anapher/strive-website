@@ -11,9 +11,9 @@ type Props = {
 export default function HighlightEquipment({ alternate }: Props) {
    const data = useStaticQuery(graphql`
       query {
-         fileName: file(relativePath: { eq: "highlights/screen_share.png" }) {
+         fileName: file(relativePath: { eq: "highlights/equipment.png" }) {
             childImageSharp {
-               gatsbyImageData(layout: CONSTRAINED, width: 800)
+               gatsbyImageData(layout: CONSTRAINED, width: 1200)
             }
          }
       }
@@ -21,16 +21,7 @@ export default function HighlightEquipment({ alternate }: Props) {
 
    return (
       <HighlightWithImage title="Equipment" image={getImage(data.fileName)} alternate={alternate}>
-         <List>
-            <ListItem>
-               Scan a QR code or open the url on any external device (smartphone, tablet, laptop, etc.)
-            </ListItem>
-            <ListItem>On the device, permit the website to access the microphones and webcams</ListItem>
-            <ListItem>
-               Now, you can select the devices of the external device just like these of your main device
-            </ListItem>
-            <ListItem>This way, you can easily use the camera of your smartphone as webcam</ListItem>
-         </List>
+         Easily use your smartphone, tablet or laptop as webcam - just by scanning a QR code!
       </HighlightWithImage>
    );
 }

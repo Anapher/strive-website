@@ -16,7 +16,7 @@ type Props = {
 export default function HighlightTalkingStick({ alternate }: Props) {
    const data = useStaticQuery(graphql`
       query {
-         fileName: file(relativePath: { eq: "highlights/screen_share.png" }) {
+         fileName: file(relativePath: { eq: "highlights/active_speaker.png" }) {
             childImageSharp {
                gatsbyImageData(width: 800)
             }

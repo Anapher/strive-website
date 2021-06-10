@@ -15,9 +15,13 @@ const Root = styled.div`
    margin-bottom: 64px;
 `;
 
-const Centered = styled.div`
+type CenteredProps = {
+   alternate?: boolean;
+};
+
+const Centered = styled.div<CenteredProps>`
    display: flex;
-   flex-direction: row;
+   ${(p) => (p.alternate ? `flex-direction: row;` : `flex-direction: row-reverse;`)};
    width: 100%;
 
    @media (max-width: 768px) {
@@ -26,7 +30,7 @@ const Centered = styled.div`
 `;
 
 const MockupContainer = styled.div`
-   flex: 1;
+   flex: 2;
 `;
 
 const TextContainer = styled.div`
@@ -53,7 +57,7 @@ type Props = {
 export default function HighlightWithImage({ title, image, children, alternate }: Props) {
    return (
       <Root>
-         <Centered style={{ flexDirection: alternate ? 'row-reverse' : undefined }}>
+         <Centered alternate={alternate}>
             <MockupContainer>
                <BrowserMockup>
                   {image && (

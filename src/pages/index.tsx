@@ -9,6 +9,9 @@ import HighlightBreakoutRooms from '../components/HighlightBreakoutRooms';
 import HighlightPermissions from '../components/HighlightPermissions';
 import HighlightTalkingStick from '../components/HighlightTalkingStick';
 import HighlightEquipment from '../components/HighlightEquipment';
+import BrowserMockup from '../components/BrowserMockup';
+import TitleImage from '../components/TitleImage';
+import HighlightPoll from '../components/HighlightPoll';
 
 const GlobalStyles = createGlobalStyle`
     body {
@@ -40,12 +43,12 @@ export default function index() {
             <Header />
             <SectionHeader title="Exactly what you need for a video conference!" />
             <FeatureList />
+            <TitleImage />
             <SectionHeader title="Highlights" />
             <HighlightScreenShare />
-            <HighlightEquipment />
+            <HighlightEquipment alternate />
             <HighlightBreakoutRooms />
-            <HighlightTalkingStick />
-            <HighlightPermissions />
+            <HighlightPoll alternate />
          </Root>
       </ThemeProvider>
    );
