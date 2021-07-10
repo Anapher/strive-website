@@ -12,6 +12,7 @@ import HighlightEquipment from '../components/HighlightEquipment';
 import BrowserMockup from '../components/BrowserMockup';
 import TitleImage from '../components/TitleImage';
 import HighlightPoll from '../components/HighlightPoll';
+import HighlightWhiteboard from '../components/HighlightWhiteboard';
 
 const GlobalStyles = createGlobalStyle`
     body {
@@ -49,6 +50,7 @@ export default function index() {
             <HighlightEquipment alternate />
             <HighlightBreakoutRooms />
             <HighlightPoll alternate />
+            <HighlightWhiteboard />
          </Root>
       </ThemeProvider>
    );
